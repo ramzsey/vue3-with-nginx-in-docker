@@ -1,0 +1,15 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: vue3-with-nginx-in-docker
+    restart: unless-stopped
+    ports: 
+      - "127.0.0.1:8080:80"
+    networks:
+      - vue3-with-nginx-in-docker
+
+networks:
+  vue3-with-nginx-in-docker:
+    driver: bridge
